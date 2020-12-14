@@ -1,5 +1,13 @@
 <h1>Add Friend</h1>
 
+<br/>
+
 <%= render 'form', friend: @friend %>
 
-<%= link_to 'Back', friends_path %>
+<div class="">
+  <div class="row justify-content-md-center align-items-center pb-2">
+    <div class="col col-4">
+      <%= link_to 'Back', friends_path, class: "btn btn-light btn-block" %>
+    </div>
+  </div>
+</div>

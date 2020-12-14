@@ -1,29 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @friend.first_name %>
+    <%= @friend.last_name %>
+  </h1>
 
-<p>
-  <strong>First name:</strong>
-  <%= @friend.first_name %>
-</p>
+  <p class="lead">
+    <%= "🐥 @#{@friend.twitter}" unless @friend.twitter.empty? %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @friend.last_name %>
-</p>
+  <p class="lead">
+    <%= "📧 #{@friend.email}" unless @friend.email.empty? %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @friend.email %>
-</p>
+  <p class="lead">
+    <%= "📱 #{@friend.phone}" unless @friend.phone.empty? %>
+  </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @friend.phone %>
-</p>
+  <hr/>
 
-<p>
-  <strong>Twitter:</strong>
-  <%= @friend.twitter %>
-</p>
+  <div class="pt-2">
+    <div class="row justify-content-md-center align-items-center pb-2">
+      <div class="col col-4">
+        <%= link_to 'Edit', edit_friend_path(@friend), class: "btn btn-primary btn-block" %>
+      </div>
+    </div>
 
-<%= link_to 'Edit', edit_friend_path(@friend) %> |
-<%= link_to 'Back', friends_path %>
+    <div class="row justify-content-md-center align-items-center pb-2">
+      <div class="col col-4">
+        <%= link_to 'Back', friends_path, class: "btn btn-light btn-block" %>
+      </div>
+    </div>
+  </div>
+</div>
