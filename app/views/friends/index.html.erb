@@ -17,6 +17,8 @@
 
     <tbody>
       <% @friends.each do |friend| %>
+        <% next unless friend.user == current_user %>
+
         <tr>
           <td><%= friend.first_name %></td>
           <td><%= friend.last_name %></td>

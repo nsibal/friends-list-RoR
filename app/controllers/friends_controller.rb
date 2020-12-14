@@ -1,5 +1,7 @@
 class FriendsController < ApplicationController
   before_action :set_friend, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @friends = Friend.all
@@ -9,14 +11,14 @@ class FriendsController < ApplicationController
   end
 
   def new
-    @friend = Friend.new
+    @friend = current_user.friends.build
   end
 
   def edit
   end
 
   def create
-    @friend = Friend.new(friend_params)
+    @friend = current_user.friends.build(friend_params)
 
     respond_to do |format|
       if @friend.save
@@ -57,5 +59,10 @@ class FriendsController < ApplicationController
 
   def friend_params
     params.require(:friend).permit(:user_id, :first_name, :last_name, :email, :phone, :twitter)
+  end
+
+  def correct_user
+    @friend = current_user.friends.find_by(id: params[:id])
+    redirect_to friends_path, notice: "You are not friends with them!" if @friend.nil?
   end
 end
