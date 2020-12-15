@@ -4,17 +4,28 @@
     <%= @friend.last_name %>
   </h1>
 
-  <p class="lead">
-    <%= "🐥 @#{@friend.twitter}" unless @friend.twitter.empty? %>
-  </p>
+  <div class="container-fluid">
+    <p class="lead">
+      <% unless @friend.twitter.empty? %>
+        <i class="fab fa-twitter text-primary"></i>
+        <%= "@#{@friend.twitter}" %>
+      <% end %>
+    </p>
 
-  <p class="lead">
-    <%= "📧 #{@friend.email}" unless @friend.email.empty? %>
-  </p>
+    <p class="lead">
+      <% unless @friend.email.empty? %>
+        <i class="fas fa-envelope text-danger"></i>
+        <%= @friend.email %>
+      <% end %>
+    </p>
 
-  <p class="lead">
-    <%= "📱 #{@friend.phone}" unless @friend.phone.empty? %>
-  </p>
+    <p class="lead">
+      <% unless @friend.phone.empty? %>
+        <i class="fas fa-mobile text-dark"></i>
+        <%= @friend.phone %>
+      <% end %>
+    </p>
+  </div>
 
   <hr/>
 

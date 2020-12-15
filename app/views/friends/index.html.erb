@@ -1,4 +1,4 @@
-<h1>All Friends</h1>
+<h1>My Friends</h1>
 
 <br/>
 
@@ -6,8 +6,7 @@
   <table class="table table-hover">
     <thead class="thead-light">
       <tr>
-        <th>First name</th>
-        <th>Last name</th>
+        <th>Name</th>
         <th>Email</th>
         <th>Phone</th>
         <th>Twitter</th>
@@ -20,14 +19,34 @@
         <% next unless friend.user == current_user %>
 
         <tr>
-          <td><%= friend.first_name %></td>
-          <td><%= friend.last_name %></td>
+          <td>
+            <%= friend.first_name %>
+            <%= friend.last_name %>
+          </td>
+
           <td><%= friend.email %></td>
+
           <td><%= friend.phone %></td>
+
           <td><%= friend.twitter %></td>
-          <td><%= link_to 'Show', friend, class: "badge badge-primary" %></td>
-          <td><%= link_to 'Edit', edit_friend_path(friend), class: "badge badge-light" %></td>
-          <td><%= link_to 'Destroy', friend, method: :delete, class: "badge badge-danger", data: { confirm: 'Are you sure?' } %></td>
+
+          <td>
+            <%= link_to friend do %>
+              <i class="fas fa-address-card text-primary"></i>
+            <% end %>
+          </td>
+
+          <td>
+            <%= link_to edit_friend_path(friend) do %>
+              <i class="fas fa-edit text-warning"></i>
+            <% end %>
+          </td>
+
+          <td>
+            <%= link_to friend, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fas fa-trash text-danger"></i>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
