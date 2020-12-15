@@ -12,6 +12,7 @@ This project involves a bunch of technologies:
 * HTML
 * CSS
 * Bootstrap
+* JavaScript
 * jQuery
 
 ---
