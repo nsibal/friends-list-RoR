@@ -1,24 +1,17 @@
-# README
+# Hello 👋
+This is a Friends List App. I created just because I wanted to learn web development using Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
 
-Things you may want to cover:
+I followed [this](https://youtu.be/fmyvWz5TUWg) Learn Ruby on Rails course on freeCodeCamp.org's YouTube channel, extensively instructed by [Codemy.com](http://Codemy.com) John Elder (@flatplanet).
 
-* Ruby version
 
-* System dependencies
+This project involves a bunch of technologies:
+* Ruby on Rails
+* SQLite
+* HTML
+* CSS
+* Bootstrap
+* jQuery
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+---

@@ -18,10 +18,12 @@
 
     <div class="container">
       <br/>
-      
+
       <%= render 'layouts/alerts' if notice %>
 
       <%= yield %>
     </div>
+
+    <%= render 'home/footer' %>
   </body>
 </html>
